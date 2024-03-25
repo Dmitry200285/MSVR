@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>PA#2</title>
+    <style>
+      body {
+        background-color: #eeeeee;
+      }
+    </style>
+
+    <script src="./Utils/trackball-rotator.js"></script>
+    <script src="./Utils/m4.js"></script>
+    <script src="./shader.gpu"></script>
+    <script src="./main.js"></script>
+  </head>
+  <body onload="init()">
+    <h2>Continuous Topographic Surface of Cassini</h2>
+    <h2>with "Trackball" Mouse Rotation</h2>
+
+    <p id="message">
+      Drag your mouse on the cube to rotate it.<br />
+      (On a touch screen, you can use your finger.)
+    </p>
+
+    <div>
+      <div>
+        <label for="converg">Convergence</label>
+        <input
+          type="range"
+          name="converg"
+          id="converg"
+          min="1"
+          max="5"
+          value="5"
+          step="0.1"
+        />
+      </div>
+      <div>
+        <label for="eyeSep">Eye Separation</label>
+        <input
+          type="range"
+          name="eyeSep"
+          id="eyeSep"
+          min="0"
+          max="2"
+          value="0.8"
+          step="0.01"
+        />
+      </div>
+      <div>
+        <label for="foView">Field of View</label>
+        <input
+          type="range"
+          name="foView"
+          id="foView"
+          min="1"
+          max="180"
+          value="30"
+          step="1"
+        />
+      </div>
+      <div>
+        <label for="ncDist">Near Clipping distance</label>
+        <input
+          type="range"
+          name="ncDist"
+          id="ncDist"
+          min="7"
+          max="12"
+          value="7"
+          step="0.1"
+        />
+      </div>
+    </div>
+    <div id="canvas-holder">
+      <canvas
+        width="600"
+        height="600"
+        id="webglcanvas"
+        style="background-color: red"
+      ></canvas>
+    </div>
+  </body>
+</html>
